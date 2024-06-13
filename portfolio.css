@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pr-color: #fff;
+  --second-color: #0a0a0a;
+  --color-1-1: #BE2518;
+  --color-1-2: #ff6b4f;
+  --cubicbz: cubic-bezier(.9, 0, .1, 1);
+  --fz-big: 60px;
+  --pd: 50px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--second-color);
+}
+
+.wrapp {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+/* google fonts */
+.jacquard-12-regular {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}  
+
+.jacquard-24-regular {
+  font-family: "Jacquard 24", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+/* google fonts */
+
+.kaneki {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+nav {
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  z-index: -2 !important;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+a:hover  {
+  color: rgb(255, 57, 90) !important;
+}
+
+i:hover {
+  color: rgb(255, 57, 90) !important;
+}
+
+a:hover ~ .cursor {
+  color: rgb(255, 57, 90);
+  cursor: pointer;
+  transform: scale(6);
+}
+
+nav > div {
+  flex: 1;
+  font-size: 1.5em;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5em;
+}
+
+.spacer {
+  width: 100%;
+  height: 50vh;
+  background: #ddd;
+}
+
+.work {
+  display: flex;
+}
+
+.work-left {
+  position: relative;
+  width: 54%;
+  z-index: 2;
+}
+
+.work-text {
+  margin: auto;
+  width: 80%;
+}
+
+.work-info {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.work-num {
+  line-height: .9;
+  text-align: right;
+  font-size: 18px;
+  transform: skewX(-20deg);
+  color: var(--color-1-1);
+}
+
+.title {
+  text-align: right;
+  font-size: 70px;
+  text-transform: uppercase;
+  color: var(--pr-color);
+}
+
+.title .stroke {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--pr-color);
+}
+
+.work-link {
+  display: block;
+  width: 365px;
+  margin-top: 50px;
+  margin-left: auto;
+  padding: 18px 0;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--pr-color);
+  letter-spacing: 4px;
+  border: 2px solid var(--color-1-1);
+  transition: .4s;
+}
+
+.work-link:hover {
+  background: var(--color-1-1);
+  color: var(--color-1-2);
+  letter-spacing: 6px;
+}
+
+.work-right {
+  width: 46%;
+  height: auto;
+}
+
