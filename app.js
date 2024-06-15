@@ -151,6 +151,55 @@ anime.timeline({ loop: false })
         opacity: 0
     })
 
+    gsap.from(".about-title", {
+        x: -1300,
+        ease: "power4.inOut",
+        duration: 2,
+        delay: 5.25,
+    })
+
+    gsap.from(".me-title", {
+        x: 1300,
+        ease: "power4.inOut",
+        duration: 2,
+        delay: 5,
+    })
+
+    gsap.from(".about-text-1", {
+        duration: 2,
+        delay: 4.75,
+        stagger: 0.05,
+        opacity: 0
+    })
+
+    gsap.from(".about-text-2", {
+        duration: 2,
+        delay: 5,
+        stagger: 0.05,
+        opacity: 0
+    })
+
+    gsap.from(".about-text-3", {
+        duration: 2,
+        delay: 5.25,
+        stagger: 0.05,
+        opacity: 0
+    })
+
+    gsap.from(".about-text-4", {
+        duration: 2,
+        delay: 5.5,
+        stagger: 0.05,
+        opacity: 0
+    })
+
+    gsap.from(".about-text-5", {
+        duration: 2,
+        delay: 5.75,
+        stagger: 0.05,
+        opacity: 0
+    })
+
     // CONTACT FUNCTIONS
 
     const subHeaders = [
