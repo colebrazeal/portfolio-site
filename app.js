@@ -87,7 +87,7 @@ anime.timeline({ loop: false })
         x: 600,
         ease: "power4.inOut",
         duration: 1.5,
-        delay: 4.5,
+        delay: 4.75,
         stagger: 0.25
     })
 
@@ -96,7 +96,7 @@ anime.timeline({ loop: false })
         x: 0,
         ease: "power4.inOut",
         duration: 1.5,
-        delay: 4.5,
+        delay: 4.75,
         stagger: 0.25
     })
 

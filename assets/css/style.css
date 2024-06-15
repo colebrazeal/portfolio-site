@@ -112,7 +112,7 @@ html, body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(assets/guts.jpg) no-repeat 50% 50%;
+    background: url(portfolio-site/assets/images/guts.jpg) no-repeat 50% 50%;
     background-size: cover;
     z-index: -1;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -219,16 +219,14 @@ html, body {
   }
 
   .img:nth-child(1) {
-    width: 225px;
+    width: 250px;
     height: 350px;
-    background: url(assets/lol.JPG) no-repeat 50% 50%;
     background-size: cover;
   }
 
   .img:nth-child(2) {
-    width: 225px;
+    width: 250px;
     height: 350px;
-    background: url(assets/kiro.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
 
