@@ -427,37 +427,5 @@ function setupCanvas() {
   canvas.height = window.innerHeight
 }
 
-// PORTFOLIO ANIMATIONS
+// PORTFOLIO PAGE FUNCTIONS
 
-const sliderContent = [
-    "Site1",
-    "Site2",
-    "Site3",
-    "Site4",
-];
-
-let currentImageIndex = 2;
-let currentContextIndex = 1;
-const totalImages = 10;
-let isAnimating = false;
-
-function splitTextIntoSpans(selector) {
-    let elements = document.querySelectorAll(selector);
-    elements.forEach((element) => {
-        let text = element.innerText;
-        let splitText = text
-        .split("")
-        .map(function (char) {
-            return `<span>${char === " " ? "&nbsp;&nbsp;" : char}`;
-        })
-        .join("");
-        element.innerHTML = splitText;
-    });
-}
-
-gsap.to(".slide-next-img", {
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    duration: 1.5,
-    ease: "power3.out",
-    delay: 1,
-});

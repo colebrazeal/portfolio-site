@@ -119,6 +119,98 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(CustomEase);
+    CustomEase.create(
+        "hop",
+        "M0,0 C0.091,0.543 0.148,0.662 0.277,0.786 0.405,0.909 0.596,0.979 1,1"
+    );
+
+    const portfolioOpen = document.querySelector(".portfolio-open");
+    const portfolioClose = document.querySelector(".portfolio-close");
+    const portfolioMenu = document.querySelector(".portfolio-menu");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
+    let isPortfolioOpen = false;
+
+    function splitTextIntoSpans(selector) {
+        let elements = document.querySelectorAll(selector);
+        elements.forEach((element) => {
+            let text = element.innerText;
+            let splitText = text
+                .split("")
+                .map(function (char) {
+                    return `<span>${char === "" ? "&nbsp;&nbsp;" : char}</span>`;
+                })
+                .join("");
+            element.innerHTML = splitText;
+        });
+    }
+
+    splitTextIntoSpans(".portfolio-link p");
+
+    gsap.set(".portfolio-close p", { y: 40 });
+    gsap.set(".portfolio-link p span", { y: 250 });
+
+    const handlePortfolio = () => {
+        gsap.to(portfolioMenu, {
+            width: isPortfolioOpen ? "20vw" : "100vw",
+            duration: 1,
+            ease: "hop",
+        });
+
+        gsap.to(".portfolio-item", {
+            justifyContent: isPortfolioOpen ? "center" : "flex-start",
+            duration: 1,
+            ease: "power3.out",
+        });
+
+        gsap.to(".portfolio-item-index", {
+            alignItems: isPortfolioOpen ? "center" : "flex-start",
+            duration: 1,
+            ease: "power3.out",
+            onComplete: () => {
+                isPortfolioOpen = !isPortfolioOpen;
+                portfolioItems.forEach((portfolioItem) => {
+                    if (isPortfolioOpen) {
+                        portfolioItem.classList.add("portfolio-opened");
+                    } else {
+                        portfolioItem.classList.remove("portfolio-opened");
+                    }
+                });
+            },
+        });
+
+        gsap.to(".portfolio-close p", {
+            y: isPortfolioOpen ? 40 : 0,
+            duration: 1,
+            ease: "power3.out",
+        });
+
+        gsap.to(".portfolio-open p", {
+            y: isPortfolioOpen ? 0 : -40,
+            duration: 1,
+            ease: "power3.out",
+        });
+
+        portfolioItems.forEach((portfolioItem) => {
+            const portfolioItemLetters =
+                portfolioItem.querySelectorAll(".portfolio-link p span");
+            gsap.to(portfolioItemLetters, {
+                delay: isPortfolioOpen ? 0 : 0.25,
+                y: isPortfolioOpen ? 250 : 0,
+                duration: 1,
+                stagger: isPortfolioOpen ? -0.075 : 0.075,
+                ease: "power3.out",
+            });
+        });
+    };
+
+    portfolioOpen.addEventListener("click", handlePortfolio);
+    portfolioClose.addEventListener("click", handlePortfolio);
+});
+
+    </script>
 </body>
 </html>
