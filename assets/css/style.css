@@ -28,11 +28,11 @@ html, body {
     font-style: normal;
   }  
 
-  .jacquard-24-regular {
-    font-family: "Jacquard 24", system-ui;
+  .rubik-glitch-regular {
+    font-family: "Rubik Glitch", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
+  }  
   /* google fonts */
 
   .pre-loader {
@@ -68,7 +68,7 @@ html, body {
   }
 
   .loader-text {
-    font-size: 5em;
+    font-size: 4em;
   }
 
   .count {
@@ -80,9 +80,8 @@ html, body {
 
   .copy {
     flex: 6;
-    /* font-family: "Major Mono Display", monospace; */
-    font-family: "Jacquard 12", system-ui;
-    font-size: 30px;
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 25px;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -178,7 +177,7 @@ html, body {
     flex: 1;
     position: relative;
     font-size: 20vw;
-    font-family: "Jacquard 24", system-ui;
+    font-family: "Rubik Glitch", system-ui;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1;
@@ -205,7 +204,7 @@ html, body {
   }
 
   b {
-    font-family: "Jacquard 12", system-ui;
+    font-family: "Rubik Glitch", system-ui;
   }
 
   .footer-nav {
