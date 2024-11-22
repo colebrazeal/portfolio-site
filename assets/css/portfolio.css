@@ -162,6 +162,16 @@ nav > div {
   font-size: 2em;
 }
 
+.loader-bg {
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  z-index: -1;
+}
+
 /* LOADER END */
 
 img {
