@@ -202,13 +202,6 @@ anime.timeline({ loop: false })
 
     // CONTACT FUNCTIONS
 
-    const subHeaders = [
-        "top-notch web design components.",
-        "forging ahead with elite web designs.",
-        "take the fast lane to mastery.",
-        "bring your projects to life, quiciker than ever."
-    ];
-
     const items = document. queryselectorAl1('#item-1, #item-2, #item-3');
     const placeholder = document. queryselector(' .placeholder');
     const subheader = document. querySelector('#subheader');
