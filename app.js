@@ -419,6 +419,3 @@ function setupCanvas() {
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
 }
-
-// PORTFOLIO PAGE FUNCTIONS
-

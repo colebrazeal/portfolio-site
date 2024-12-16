@@ -1,69 +1,123 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --pr-color: #fff;
-  --second-color: #0a0a0a;
-  --color-1-1: #BE2518;
-  --color-1-2: #ff6b4f;
-  --cubicbz: cubic-bezier(.9, 0, .1, 1);
-  --fz-big: 60px;
-  --pd: 50px;
+html, body {
+    width: 100vw;
+    height: 500vh;
+    background-color: #fff;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  background: var(--pr-color);
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 /* google fonts */
 .jacquard-12-regular {
-  font-family: "Jacquard 12", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}  
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
 
-.rubik-glitch-regular {
-  font-family: "Rubik Glitch", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}  
-/* google fonts */
+  .rubik-glitch-regular {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }  
+  /* google fonts */
 
-/* NAV */
+/* LOADER START */
 
-.kaneki {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
+.pre-loader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .loader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: pink;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+  }
 
-nav {
-  width: 100%;
-  padding: 2em;
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  font-family: "Bebas Neue", sans-serif;
-}
+  .loader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    z-index: 20;
+    color: #000;
+  }
+
+  .loader-text {
+    font-size: 5em;
+  }
+
+  .count {
+    flex: 2;
+    text-align: right;
+    line-height: 1;
+    padding: 0 1em;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  .copy {
+    flex: 6;
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .ml16 {
+    overflow: hidden;
+  }
+
+  .ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+    font-size: 2em;
+  }
+
+  .loader-bg {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: -1;
+  }
+
+  /* LOADER END */
+
+/* NAV START */
 
 a {
-  text-decoration: none;
-  color: #fff;
-  cursor: pointer;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 a:hover  {
@@ -74,305 +128,40 @@ i:hover {
   color: pink !important;
 }
 
-a:hover ~ .cursor {
-  color: pink;
-  cursor: pointer;
-  transform: scale(6);
+nav {
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-nav > div {
-  flex: 1;
-  font-size: 1.5em;
-}
-
-.links {
-  display: flex;
-  justify-content: flex-end;
-  gap: 5em;
-}
-
-.logo {
-  padding-left: 13em;
-}
-
-/* NAV */
-
-/* LOADER */
-
-.pre-loader {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  z-index: 100;
-}
-
-.loader {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  width: 400px;
-  z-index: 1000 !important; 
-  color: #000;
-}
-
-.loader-text {
-  font-size: 5em;
-}
-
-.count {
-  flex: 2;
-  text-align: right;
-  line-height: 1;
-  padding: 0 1em;
-  font-family: "Bebas Neue", sans-serif;
-}
-
-.copy {
-  flex: 6;
-  font-family: "Rubik Glitch", system-ui;
-  font-size: 25px;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.ml16 {
-  overflow: hidden;
-}
-
-.ml16 .letter {
-  display: inline-block;
-  line-height: 1em;
-  font-size: 2em;
-}
-
-.loader-bg {
-  position: absolute;
-  display: block;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: pink;
-  z-index: -1;
-}
-
-/* LOADER END */
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-p {
-  text-transform: uppercase;
-  font-weight: 500;
-  line-height: 100%;
-}
-
-.title-container {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  top: 35%;
-}
-
-.portfolio-title {
-  color: #fff;
-  font-family: "Rubik Glitch", system-ui;
-  font-size: 80px;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  background: #000;
-  background-size: cover;
-}
-
-.portfolio-open {
-  position: fixed;
-  top: 40%;
-  right: 0;
-  color: pink;
-  z-index: 1;
-  font-size: 20px;
-}
-
-.portfolio-close {
-  position: fixed;
-  top: 40%;
-  right: 0;
-  color: rgb(255, 132, 153);
-  z-index: 10;
-  font-size: 20px;
-}
-
-.portfolio-open,
-.portfolio-close {
-  margin: 0.75em;
-  padding: 0.75em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  cursor: pointer;
-}
-
-.portfolio-open p,
-.portfolio-close p {
-  position: relative;
-}
-
-.portfolio-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20vw;
-  height: 100vh;
-  display: flex;
-  z-index: 2;
-}
-
-.portfolio-item {
-  position: relative;
-  flex: 1;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  background: pink;
-  border-left: 1.5px solid rgba(55, 55, 55, 0.35);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  margin-left: -1px;
-}
-
-.portfolio-item-index {
-  height: 100%;
-  padding: 1.5em 0.5em 2em 0.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-}
-
-.portfolio-item-index p:nth-child(2) {
-  position: relative;
-  transform: rotate(-90deg);
-}
-
-.portfolio-link {
-  position: absolute;
-  bottom: 5%;
-  left: 55%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-/* .portfolio-item:nth-child(3) .portfolio-link {
-  bottom: 7.5%;
-} */
-
-.portfolio-link p {
-  position: relative;
-  display: flex;
-  /* font-family: ; */
-  font-size: 200px;
-  font-weight: lighter;
-  transition: all 0.5s;
-}
-
-.portfolio-link p span {
-  position: relative;
-}
-
-.portfolio-item .portfolio-link-main,
-.portfolio-item .portfolio-link-hover {
-  transform: all 0.5s;
-}
-
-.portfolio-link-main p {
-  color: #fff;
-}
-
-.portfolio-item .portfolio-link-hover {
-  left: 150%;
-  color: rgb(255, 132, 153);
-}
-
-.portfolio-item:hover .portfolio-link-main {
-  left: -100%;
-}
-
-.portfolio-item:hover .portfolio-link-hover {
-  left: 50%;
-}
-
-.portfolio-img {
-  position: absolute;
-  width: 75%;
-  left: 35%;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-  transition: 0.5s all cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.portfolio-item .portfolio-opened:hover .portfolio-img {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-@media (max-width: 900px) {
-  .portfolio-menu {
-    flex-direction: column;
+  nav > div {
+    flex: 1;
+    font-size: 1.5em;
   }
 
-  .portfolio-link {
-    bottom: unset;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
+  .kaneki {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
 
-  .portfolio-item:nth-child(3) .portfolio-link {
-    bottom: unset;
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5em;
   }
 
-  .portfolio-link p {
-    font-size: 80px;
-  }
+.nav-button {
+    text-decoration: none;
+    color: #000 !important;
+    font-family: "Bebas Neue", sans-serif;
+}
 
-  .portfolio-link-hover {
-    display: none;
-  }
+/* NAV END */
 
-  .portfolio-item:hover .portfolio-link-main {
-    top: 50%;
-    left: 50%;
-  }
-
-  .portfolio-menu-index {
-    align-items: center;
-  }
-
-  .portfolio-item-index p:nth-child(1) {
-    padding: 0 0.5em;
-  }
-
-  .portfolio-img {
-    display: none;
-  }
+canvas {
+  z-index: 1 !important;
 }
