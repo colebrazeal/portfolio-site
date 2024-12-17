@@ -105,30 +105,30 @@
             const textureLoader = new THREE.TextureLoader();
 
             function getRandomImage() {
-                return Math.floor(Math.random() * 6) + 1;
+                return Math.floor(Math.random() * 11) + 1;
             }
 
             function loadImageTexture(imageNumber) {
                 return new Promise((resolve) => {
                     const texture = textureLoader.load(
                         `./assets/images/${imageNumber}.jpg`,
-                        resolve,
-                undefined,
-                (err) => {
-                    console.error("Image failed to load:", err);
-                    resolve(null); // Fallback for failed texture loading
-                
                         (loadedTexture) => {
-                            loadedTexture.generateMipmaps = true;
-                            loadedTexture.minFilter = THREE.LinearMipmapLinearFilter;
-                        loadedTexture.magFilter = THREE.LinearFilter;
-                        loadedTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-                        resolve(loadedTexture);
+                            loadedTexture.wrapS = THREE.ClampToEdgeWrapping;
+                            loadedTexture.wrapT = THREE.ClampToEdgeWrapping;
+                            loadedTexture.minFilter = THREE.LinearFilter;
+                            loadedTexture.magFilter = THREE.LinearFilter;
+                            loadedTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+                            resolve(loadedTexture);
+                        },
+                        undefined,
+                        (err) => {
+                            console.error("Image failed to load:", err);
+                            resolve(null);
                         }
-                    }
                     );
                 });
             }
+
 
             function createCurvedPlane(width, height, radius, segments) {
                 const geometry = new THREE.BufferGeometry();
@@ -136,7 +136,7 @@
                 const indices = [];
                 const uvs = [];
 
-                const segmentsX = segments * 4;
+                const segmentsX = segments * 4; 
                 const segmentsY = Math.floor(height * 12);
                 const theta = width / radius;
 
@@ -148,7 +148,7 @@
                         const zPos = Math.cos(xAngle) * radius;
                         vertices.push(xPos, yPos, zPos);
 
-                        uvs.push((x / segmentsX) * 0.8 + 0.1, y / segmentsY);
+                        uvs.push(x / segmentsX, y / segmentsY);
                     }
                 }
 
@@ -174,6 +174,7 @@
                 return geometry;
             }
 
+
             const numVerticalSections = 12;
             const blocksPerSection = 4;
             const verticalSpacing = 3.25;
@@ -197,6 +198,7 @@
                     toneMapped: false,
                 });
 
+
                 const block = new THREE.Mesh(blockGeometry, blockMaterial);
                 block.position.y = baseY + yOffset;
 
@@ -216,7 +218,7 @@
                     const baseY = startY + section * verticalSpacing;
 
                     for (let i = 0; i < blocksPerSection; i++) {
-                        const yOffset = Math.random() * 0.2 - 0.1;
+                        const yOffset = 0; 
                         const blockContainer = await createBlock(baseY, yOffset, section, i);
                         blocks.push(blockContainer);
                         galleryGroup.add(blockContainer);
@@ -251,6 +253,78 @@
 
                 renderer.render(scene, camera);
             }
+
+            const links = [
+                "https://example.com/cta1",
+                "https://example.com/cta2",
+                "https://example.com/cta3",
+                "https://example.com/cta4",
+                "https://example.com/cta5",
+                "https://example.com/cta6",
+                "https://example.com/cta7",
+                "https://example.com/cta8",
+                "https://example.com/cta9",
+                "https://example.com/cta10",
+                "https://example.com/cta11",
+            ];
+
+            async function createBlock(baseY, yOffset, sectionIndex, blockIndex) {
+                const blockGeometry = createCurvedPlane(5, 3, radius, 10);
+                const imageNumber = getRandomImage();
+                const texture = await loadImageTexture(imageNumber);
+
+                const blockMaterial = new THREE.MeshPhongMaterial({
+                    map: texture,
+                    side: THREE.DoubleSide,
+                    toneMapped: false,
+                });
+
+                const block = new THREE.Mesh(blockGeometry, blockMaterial);
+                block.position.y = baseY + yOffset;
+
+                const blockContainer = new THREE.Group();
+                const baseAngle = sectionAngle * blockIndex;
+                const randomAngleOffset = (Math.random() * 2 - 1) * maxRandomAngle;
+                const finalAngle = baseAngle + randomAngleOffset;
+
+                blockContainer.rotation.y = finalAngle;
+                blockContainer.add(block);
+
+                // Add click event
+                const linkIndex = (sectionIndex * blocksPerSection + blockIndex) % links.length;
+                blockContainer.userData.link = links[linkIndex];
+                blockContainer.addEventListener('click', () => {
+                    window.open(blockContainer.userData.link, '_blank');
+                });
+
+                return blockContainer;
+            }
+
+                // Enable raycasting to handle clicks
+                const raycaster = new THREE.Raycaster();
+                const mouse = new THREE.Vector2();
+
+                function onDocumentMouseClick(event) {
+                    event.preventDefault();
+
+                    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+                    raycaster.setFromCamera(mouse, camera);
+
+                    const intersects = raycaster.intersectObjects(galleryGroup.children, true);
+                    if (intersects.length > 0) {
+                        const clickedObject = intersects[0].object;
+                        if (clickedObject.parent.userData.link) {
+                            window.open(clickedObject.parent.userData.link, '_blank');
+                        }
+                    }
+                }
+
+
+
+            window.addEventListener('click', onDocumentMouseClick);
+
 
             initializeBlocks();
             animate();
