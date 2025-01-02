@@ -36,11 +36,15 @@ h1 {
   letter-spacing: -0.025em;
 }
 
-h2 {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.025em;
+.port {
+  color: #000;
+  font-family: "Rubik Glitch", system-ui !important;
+}
+
+.folio {
+  color: #fff;
+  font-family: "Rubik Glitch", system-ui !important;
+  mix-blend-mode: difference;
 }
 
 p {
@@ -158,9 +162,21 @@ section.ws {
   justify-content: space-between; 
   align-items: center; 
   height: 100vh;
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   padding: 2em;
+}
+
+.visit-right {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #fff;
+}
+
+.visit-right:hover, .visit-left:hover {
+  color: pink;
 }
 
 .project-img {
@@ -181,6 +197,7 @@ section.ws {
 .project-info {
   font-size: 20px;
   margin-bottom: 1em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .project-link {
@@ -195,33 +212,41 @@ section.ws {
 
 .project-container-left {
   display: flex;
-  flex-direction: row; /* Image and text side by side */
-  justify-content: space-between; /* Space between the text and image */
-  align-items: center; /* Vertically center the content */
-  height: 100vh; /* Optional: Full viewport height */
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  height: 100vh; 
   background-color: #fff;
   color: #000;
-  padding: 2em; /* Add padding around the container */
+  padding: 2em; 
+}
+
+.visit-left {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #000;
 }
 
 .project-text {
   display: flex;
-  flex-direction: column; /* Stack text elements vertically */
-  justify-content: center; /* Vertically center the text */
-  align-items: flex-start; /* Align text to the left */
+  flex-direction: column; 
+  justify-content: center;
+  align-items: flex-start;
   text-align: left;
-  max-width: 50%; /* Prevent text from stretching too wide */
+  max-width: 50%;
 }
 
 .project-img {
-  width: 40%; /* Adjust the image size */
+  width: 40%;
   height: auto;
   object-fit: contain;
 }
 
 .project-info {
   font-size: 20px;
-  margin-bottom: 1em; /* Add spacing between text blocks */
+  margin-bottom: 1em;
 }
 
 .project-link {
@@ -231,10 +256,8 @@ section.ws {
 }
 
 .project-link:hover {
-  color: pink; /* Optional hover effect */
+  color: pink;
 }
-
-
 
 .outro {
   display: flex;
@@ -346,7 +369,7 @@ section.ws {
     width: 100%;
     height: 100%;
     background-color: #000;
-    z-index: -1;
+    /* z-index: -1; */
   }
 
   /* LOADER END */
