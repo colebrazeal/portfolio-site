@@ -102,7 +102,7 @@
                 <div class="project-text">
                   <h1>Inspire 2024</h1>
                   <span class="project-info">
-                    This project is a multi-page responsive website built for the 
+                    This project is an ADDY Award nominated, multi-page responsive website built for the 
                     2024 TD SYNNEX "Inspire" company event. The site features immersive animations as well as 
                     beautifully executed design to immerse the attendees of this company event.
                   </span>
@@ -118,7 +118,7 @@
                   <div class="project-text">
                       <h1>Lenovo Legends</h1>
                       <span class="project-info">
-                          This Lenovo project is a responsive horizontal scroller website built for the 
+                          This Lenovo project was also nominated for an ADDY Award. It is a responsive horizontal scroller website built for the 
                           Lenovo Legends SMB program at TD SYNNEX. It features a responsive design 
                           with animations integrated into the site that provide for a seemless horizontal 
                           scrolling experience for the user.
@@ -289,7 +289,14 @@
 
             gsap.registerPlugin(ScrollTrigger);
 
+            // Initialize Lenis
             const lenis = new Lenis();
+
+            // Reset scroll position to top after page refresh/load using Lenis API
+            window.addEventListener("load", () => {
+                lenis.scrollTo(0, { duration: 0 });// Scroll to top instantly (duration 0 for immediate action)
+            });
+
             lenis.on("scroll", ScrollTrigger.update);
 
             gsap.ticker.add((time) => {
@@ -321,6 +328,7 @@
                     mainImg.style.transform = `scale(${mainImgScale})`;
                 },
             });
+
         </script>
         <!-- <script src="app.js"></script> -->
         <!-- SCRIPT TAGS END -->
