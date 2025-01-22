@@ -77,7 +77,7 @@ gsap.to(".loader-2", {
 
 // All the other animations
 gsap.from(".header h1", {
-    y: 400,
+    y: 750,
     ease: "power4.inOut",
     duration: 2,
     delay: 4.25,
