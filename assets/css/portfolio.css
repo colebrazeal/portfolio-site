@@ -148,7 +148,7 @@ section {
 .divider {
   width: 1.5px;
   height: 30%;
-  background-color: #fff;
+  background-color: pink;
 }
 
 section.ws {
@@ -405,7 +405,7 @@ nav {
     display: flex;
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 22;
 }
 
   nav > div {
