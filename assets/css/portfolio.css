@@ -141,8 +141,8 @@ section {
   align-items: center;
   text-align: center;
   padding: 4em 0;
-  background-color: pink;
-  color: #fff;
+  background-color: #000;
+  color: pink;
 }
 
 .divider {
@@ -269,8 +269,8 @@ section.ws {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: pink;
-  color: #fff;
+  background-color: #000;
+  color: pink;
 }
 
 .footer-bg {
@@ -392,11 +392,11 @@ a {
 }
 
 a:hover  {
-  color: pink !important;
+  color: rgb(255, 125, 147) !important;
 }
 
 i:hover {
-  color: pink !important;
+  color: rgb(255, 125, 147) !important;
 }
 
 nav {
@@ -427,7 +427,7 @@ nav {
 
 .nav-button {
     text-decoration: none;
-    color: #000;
+    color: pink;
     font-family: "Bebas Neue", sans-serif;
 }
 
