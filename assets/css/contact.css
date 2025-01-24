@@ -36,8 +36,8 @@ nav {
   }
 
   .kaneki {
-    width: 50px;
-    height: 50px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
   }
 
@@ -72,7 +72,7 @@ nav {
 .contact-button {
     display: flex;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875em;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
 }
@@ -85,7 +85,7 @@ nav {
 .contactPlaceholder {
     text-align: center;
     font-family: "Rubik Glitch", system-ui;
-    font-size: 80px;
+    font-size: 5em;
     color: #fff;
     line-height: 2.25;
 }
@@ -117,7 +117,7 @@ nav {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    width: 400px;
+    width: 25em;
     z-index: 2;
     color: #000;
   }
@@ -137,7 +137,7 @@ nav {
   .copy {
     flex: 6;
     font-family: "Rubik Glitch", system-ui;
-    font-size: 25px;
+    font-size: 1.563em;
     text-transform: uppercase;
     line-height: 1;
   }

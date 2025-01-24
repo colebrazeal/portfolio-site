@@ -31,10 +31,9 @@ nav {
   }
 
   .kaneki {
-    width: 50px;
-    height: 50px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
-    background: rgb(255, 109, 133);
   }
 
   .links {

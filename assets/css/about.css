@@ -35,7 +35,7 @@ html, body {
   h1 {
     font-family: "Rubik Glitch", system-ui;
     font-size: 15vw;
-    padding-left: 30px;
+    padding-left: 1.875rem;
   }
 
 a {
@@ -66,8 +66,8 @@ nav {
   }
 
   .kaneki {
-    width: 50px;
-    height: 50px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
   }
 
@@ -103,7 +103,7 @@ nav {
 .contact-button {
     display: flex;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875em;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
 }
@@ -117,7 +117,7 @@ nav {
     text-align: center;
     /* font-family: "Bebas Neue", sans-serif; */
     font-family: "Rubik Glitch", system-ui;
-    font-size: 80px;
+    font-size: 5em;
     color: #fff;
     line-height: 2.25;
 }
@@ -149,7 +149,7 @@ nav {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    width: 400px;
+    width: 25em;
     z-index: 2;
     color: #000;
   }
@@ -169,7 +169,7 @@ nav {
   .copy {
     flex: 6;
     font-family: "Rubik Glitch", system-ui;
-    font-size: 25px;
+    font-size: 1.563em;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -202,7 +202,7 @@ nav {
   .about-text-container {
     display: flex;
     flex-direction: column;
-    padding-left: 30px;
+    padding-left: 1.875em;
     width: 80vw;
   }
 
@@ -213,9 +213,21 @@ nav {
   .about-text-5,
   .about-text-6 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 1.25em;
   }
 
   .codeboxx {
     z-index: 3;
+  }
+
+  @media screen and (max-width: 900px) {
+    
+    html, body {
+      overflow: visible;
+  }
+
+  .about-text-container {
+    padding: 1.875em;
+  }
+
   }

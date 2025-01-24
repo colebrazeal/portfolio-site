@@ -43,7 +43,7 @@ html, body {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    width: 400px;
+    width: 25em;
     z-index: 2;
     color: #fff;
   }
@@ -62,7 +62,7 @@ html, body {
   .copy {
     flex: 6;
     font-family: "Rubik Glitch", system-ui;
-    font-size: 25px;
+    font-size: 1.5em;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -108,8 +108,8 @@ html, body {
   /* NAV */
 
   .kaneki {
-    width: 50px;
-    height: 50px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
   }
 
@@ -203,14 +203,14 @@ html, body {
   }
 
   .img:nth-child(1) {
-    width: 250px;
-    height: 350px;
+    width: 15.625em;
+    height: 21.875em;
     background-size: cover;
   }
 
   .img:nth-child(2) {
-    width: 250px;
-    height: 350px;
+    width: 15.625em;
+    height: 21.875em;
     background-size: cover;
   }
 
