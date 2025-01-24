@@ -75,6 +75,20 @@ gsap.to(".loader-2", {
     delay: 3.75
 })
 
+gsap.from(".loader-2-mobile", {
+    y: 0,
+    ease: "power4.inOut",
+    duration: 3,
+    delay: 3.75
+})
+
+gsap.to(".loader-2-mobile", {
+    y: -1200,
+    ease: "power4.inOut",
+    duration: 3,
+    delay: 3.75
+})
+
 // All the other animations
 gsap.from(".header h1", {
     y: 750,
