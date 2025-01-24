@@ -69,7 +69,7 @@ gsap.from(".loader-2", {
 })
 
 gsap.to(".loader-2", {
-    y: -1200,
+    y: -1600,
     ease: "power4.inOut",
     duration: 3,
     delay: 3.75
