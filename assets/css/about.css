@@ -170,6 +170,7 @@ nav {
     flex-direction: column;
     padding-left: 1.875em;
     width: 80vw;
+    margin-bottom: 1.875em;
   }
 
   .about-text-1,
