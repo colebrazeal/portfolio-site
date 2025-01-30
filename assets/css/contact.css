@@ -164,7 +164,7 @@ nav {
 
   /* MEDIA QUERIES */
 
-  @media screen and (min-width: 501px) {
+  @media screen and (min-width: 901px) {
 
     .loader-2-mobile {
       display: none;
@@ -172,7 +172,7 @@ nav {
 
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 900px) {
 
     body {
       overflow: hidden;
