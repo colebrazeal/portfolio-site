@@ -248,7 +248,6 @@ html, body {
         flex-direction: column;
     }
 
-<<<<<<< HEAD
   }
 
   @media(max-width: 1900px) {
@@ -272,7 +271,6 @@ html, body {
         flex-direction: column;
     }
     
-=======
     .img {
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       width: 10em;
@@ -381,7 +379,83 @@ html, body {
       flex-direction: column;
       gap: 1em;
     }
+
+    .primary-navigation {
+      --gap: 2em;
+      position: fixed;
+      inset: 0 0 0 30%;
+      flex-direction: column;
+      padding: min(30vh, 10rem) 2rem;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 350ms ease-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+      transform: translateX(0%);
+      color: #fff;
+  }
+
+  .primary-navigation a {
+      color: #fff;
+  }
+
+  .menu-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+      padding-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: all .5s ease-in-out;
+  }
+
+  .menu-btn_burger {
+      width: 25px;
+      height: 3px;
+      background:#000;
+      border-radius: 2.5px;
+      transition: all .5s ease-in-out;
+  }
+
+  .menu-btn_burger::before,
+  .menu-btn_burger::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background:#000;
+      border-radius: 2.5px;
+      transition: all .5s ease-in-out;
+  }
+
+  .menu-btn_burger::before {
+      transform: translateY(-8px);
+  }
+
+  .menu-btn_burger::after {
+      transform: translateY(8px);
+  }
+
+  /* ANIMATION */
+  .menu-btn.open .menu-btn_burger {
+      transform: translateX(-50px);
+      background: transparent;
+      box-shadow: none;
+  }
+
+  .menu-btn.open .menu-btn_burger::before {
+      transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  .menu-btn.open .menu-btn_burger::after {
+      transform: rotate(-45deg) translate(35px, 35px);
+  }
     
     
->>>>>>> refs/remotes/origin/main
   }
