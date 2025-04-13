@@ -39,40 +39,55 @@ anime.timeline({ loop: false })
         delay: (el, i) => 2000 + 30 * i
     })
 
-    gsap.to(".pre-loader", {
-        scale: 0.5, 
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 3
-    })
+// Adding animations and transitions
+gsap.to(".pre-loader", {
+    scale: 0.5, 
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 3
+})
 
-    gsap.to(".loader", {
-        height: "0", 
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 3.75
-    })
+gsap.to(".loader", {
+    height: "0", 
+    ease: "power4.inOut",
+    duration: 1.5,
+    delay: 3.75
+})
 
-    gsap.to(".loader-bg", {
-        height: "0", 
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 4,
-    })
+gsap.to(".loader-bg", {
+    height: "0", 
+    ease: "power4.inOut",
+    duration: 1.5,
+    delay: 4,
+})
 
-    gsap.from(".loader-2", {
-        y: 0,
-        ease: "power4.inOut",
-        duration: 3,
-        delay: 3.75
-    })
+gsap.from(".loader-2", {
+    y: 0,
+    ease: "power4.inOut",
+    duration: 3,
+    delay: 3.75
+})
 
-    gsap.to(".loader-2", {
-        y: -1200,
-        ease: "power4.inOut",
-        duration: 3,
-        delay: 3.75
-    })
+gsap.to(".loader-2", {
+    y: -1600,
+    ease: "power4.inOut",
+    duration: 3,
+    delay: 3.75
+})
+
+gsap.from(".loader-2-mobile", {
+    y: 0,
+    ease: "power4.inOut",
+    duration: 3,
+    delay: 3.75
+})
+
+gsap.to(".loader-2-mobile", {
+    y: -1200,
+    ease: "power4.inOut",
+    duration: 3,
+    delay: 3.75
+})
 
     gsap.from(".header h1", {
         y: 400,
@@ -82,123 +97,143 @@ anime.timeline({ loop: false })
         stagger: 0.05
     })
 
-    gsap.from(".img", {
-        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        x: 600,
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 4.75,
-        stagger: 0.25
-    })
+gsap.from(".img", {
+    x: 600,
+    ease: "power4.inOut",
+    duration: 1.5,
+    delay: 4.75,
+    stagger: 0.25
+})
 
-    gsap.to(".img", {
-        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        x: 0,
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 4.75,
-        stagger: 0.25
-    })
+gsap.to(".img", {
+    x: 0,
+    ease: "power4.inOut",
+    duration: 1.5,
+    delay: 4.75,
+    stagger: 0.25
+})
 
-    gsap.from(".placeholder", {
-        y: 300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 4,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".placeholder", {
+    y: 300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 4,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from(".logo", {
-        y: -300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 4.5,
-    })
+gsap.from(".logo", {
+    y: -300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 4.5,
+})
 
-    gsap.from("#nav1", {
-        y: -300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 4.75,
-    })
+gsap.from("#nav1", {
+    y: -300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 4.75,
+})
 
-    gsap.from("#nav2", {
-        y: -300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 5,
-    })
+gsap.from("#nav2", {
+    y: -300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 5,
+})
 
-    gsap.from("#nav3", {
-        y: -300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 5.25,
-    })
+gsap.from("#nav3", {
+    y: -300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 5.25,
+})
 
-    gsap.from(".contactPlaceholder", {
-        duration: 2,
-        delay: 4.25,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".contactPlaceholder", {
+    duration: 2,
+    delay: 4.25,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from("#subheader", {
-        duration: 2,
-        delay: 4.25,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from("#subheader", {
+    duration: 2,
+    delay: 4.25,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from(".about-title", {
-        x: -1300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 5.25,
-    })
+gsap.from(".about-title", {
+    x: -1300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 5.25,
+})
 
-    gsap.from(".me-title", {
-        x: 1300,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 5,
-    })
+gsap.from(".me-title", {
+    x: 1300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 5,
+})
 
-    gsap.from(".about-text-1", {
-        duration: 2,
-        delay: 4.75,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".about-text-1", {
+    duration: 2,
+    delay: 4.75,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from(".about-text-2", {
-        duration: 2,
-        delay: 5,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".about-text-2", {
+    duration: 2,
+    delay: 5,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from(".about-text-3", {
-        duration: 2,
-        delay: 5.25,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".about-text-3", {
+    duration: 2,
+    delay: 5.25,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from(".about-text-4", {
-        duration: 2,
-        delay: 5.5,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".about-text-4", {
+    duration: 2,
+    delay: 5.5,
+    stagger: 0.05,
+    opacity: 0
+})
 
-    gsap.from(".about-text-5", {
-        duration: 2,
-        delay: 5.75,
-        stagger: 0.05,
-        opacity: 0
-    })
+gsap.from(".about-text-5", {
+    duration: 2,
+    delay: 5.75,
+    stagger: 0.05,
+    opacity: 0
+})
+
+// Add functionality to set z-index to -1 after loader finishes
+gsap.delayedCall(6, function() { // 6 is the delay after the loader finishes
+    // Select all elements you want to set z-index to -1
+    const targets = [
+        ".pre-loader",
+        ".loader",
+        ".loader-bg",
+        ".loader-content",
+        ".count",
+        ".copy",
+        ".m-16",
+    ];
+
+    // Set z-index to -1 for all these targets
+    targets.forEach(target => {
+        document.querySelectorAll(target).forEach(el => {
+            el.style.zIndex = -5;
+        });
+    });
+});
+
 
     // CONTACT FUNCTIONS
 
