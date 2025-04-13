@@ -75,7 +75,7 @@ anime.timeline({ loop: false })
     })
 
     gsap.from(".header h1", {
-        y: 200,
+        y: 400,
         ease: "power4.inOut",
         duration: 2,
         delay: 4.25,
