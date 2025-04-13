@@ -205,6 +205,11 @@ nav {
       overflow-x: hidden !important;
   }
 
+  .loader {
+    height: 100dvh;
+    width: 100vw;
+  }
+
   .about-title-container {
     padding-top: 5rem;
   }
