@@ -205,8 +205,14 @@ nav {
       overflow-x: hidden !important;
   }
 
+  .about-title-container {
+    padding-top: 5rem;
+  }
+
   .about-text-container {
-    padding: 1.875em;
+    padding-top: 1.875em;
+    margin-bottom: 8em;
+    width: 80%;
   }
 
     footer {
@@ -223,7 +229,15 @@ nav {
         justify-content: space-between;
     }
 
+    .about-cta:hover {
+      color: #fff !important;
+    }
+
     /* LOADER */
+
+    .loader {
+      z-index: 10000 !important;
+    }
 
     .loader-2 {
       display: none;
@@ -247,7 +261,6 @@ nav {
       display: flex;
       justify-content: center;
       width: 25em;
-      z-index: 2;
       color: #000;
     }
 
@@ -261,56 +274,139 @@ nav {
 
     /* LOADER END */
 
-    /* MOBILE NAV */
+      /* MOBILE NAV */
 
-    .logo {
-      width: 2em;
-      height: 2em;
-      border-radius: 50%;
-      position: absolute;
-      left: 5%; 
-      top: 5%;
+      .logo {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        position: absolute;
+        left: 5%; 
+        top: 2%;
+      }
+      
+      nav {
+        width: 100%;
+        padding: 2em;
+        display: flex;
+        z-index: -2 !important;
+        flex-direction: column; 
+        align-items: flex-end; 
+        right: 0; 
+        top: 0; 
+      }
+      
+      a {
+        text-decoration: none;
+        color: #000;
+        cursor: pointer;
+      }
+      
+      a:hover {
+        color: pink !important;
+      }
+      
+      i:hover {
+        color: pink !important;
+      }
+      
+      a:hover ~ .cursor {
+        color: pink;
+        cursor: pointer;
+        transform: scale(6);
+      }
+      
+      nav > div {
+        font-size: 1.5em;
+      }
+      
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+  
+      .primary-navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: min(3rem) 2rem;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
     }
-    
-    nav {
-      width: 100%;
-      padding: 2em;
-      display: flex;
-      z-index: -2 !important;
-      flex-direction: column; 
-      align-items: flex-end; 
-      right: 0; 
-      top: 0; 
+  
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+        color: #000;
     }
-    
-    a {
-      text-decoration: none;
-      color: #000;
-      cursor: pointer;
+  
+    .primary-navigation a {
+        color: #000;
     }
-    
-    a:hover {
-      color: pink !important;
+  
+    .menu-btn {
+        position: absolute;
+        right: 2%; 
+        top: 2%;
+        z-index: 9999;
+        padding-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
     }
-    
-    i:hover {
-      color: pink !important;
+  
+    .menu-btn_burger {
+        width: 25px;
+        height: 3px;
+        background:#000;
+        border-radius: 2.5px;
+        transition: all .5s ease-in-out;
     }
-    
-    a:hover ~ .cursor {
-      color: pink;
-      cursor: pointer;
-      transform: scale(6);
+  
+    .menu-btn_burger::before,
+    .menu-btn_burger::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background:#000;
+        border-radius: 2.5px;
+        transition: all .5s ease-in-out;
     }
-    
-    nav > div {
-      font-size: 1.5em;
+  
+    .menu-btn_burger::before {
+        transform: translateY(-8px);
     }
-    
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
+  
+    .menu-btn_burger::after {
+        transform: translateY(8px);
+    }
+  
+    /* ANIMATION */
+    .menu-btn.open .menu-btn_burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+  
+    .menu-btn.open .menu-btn_burger::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+  
+    .menu-btn.open .menu-btn_burger::after {
+        transform: rotate(-45deg) translate(35px, 35px);
     }
     
   }

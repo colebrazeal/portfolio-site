@@ -158,6 +158,20 @@ gsap.from(".logo", {
     delay: 4.5,
 })
 
+gsap.from("#menu-burger", {
+    y: -300,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 3.5,
+})
+
+gsap.to("#menu-burger", {
+    y: 0,
+    ease: "power4.inOut",
+    duration: 2,
+    delay: 3.5,
+})
+
 gsap.from("#nav1", {
     y: -300,
     ease: "power4.inOut",
