@@ -1,4 +1,33 @@
 // HOME ANIMATIONS
+
+const primaryNav = document.querySelector(".primary-navigation");
+const navToggle = document.querySelector(".menu-btn");
+
+
+navToggle.addEventListener('click', () => {
+    const visibility = primaryNav.getAttribute("data-visible");
+    
+    if (visibility === "false") {
+        primaryNav.setAttribute("data-visible", true);
+		navToggle.setAttribute('aria-expanded', true);
+    } else if (visibility === "true") {
+        primaryNav.setAttribute('data-visible', false);
+		navToggle.setAttribute('aria-expanded', false);
+    }
+});
+
+const menuBtn = document.querySelector('.menu-btn');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+	if(!menuOpen){
+		menuBtn.classList.add('open');
+		menuOpen = true;
+	} else {
+		menuBtn.classList.remove('open');
+		menuOpen = false;
+	}
+});
+
 function startLoader() {
     let counterElement = document.querySelector(".count p");
     let currentValue = 0;
