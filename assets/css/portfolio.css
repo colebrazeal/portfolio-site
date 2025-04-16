@@ -17,9 +17,9 @@
 }
 
 html, body {
-    width: 100vw;
-    height: 1000vh;
-    background-color: #fff;
+  width: 100vw;
+  height: 1000vh;
+  background-color: #fff;
 }
 
 img {
@@ -384,54 +384,48 @@ section.ws {
 
   /* LOADER END */
 
-/* NAV START */
+ /* NAV */
 
-a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-a:hover  {
-  color: rgb(255, 125, 147) !important;
-}
-
-i:hover {
-  color: rgb(255, 125, 147) !important;
+ .kaneki {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
 }
 
 nav {
-    width: 100%;
-    padding: 2em;
-    display: flex;
-    position: fixed;
-    top: 0;
-    z-index: 22;
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  z-index: -2 !important;
 }
 
-  nav > div {
-    flex: 1;
-    font-size: 1.5em;
-  }
-
-  .kaneki {
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%;
-  }
-
-  .links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5em;
-  }
-
-.nav-button {
-    text-decoration: none;
-    color: pink;
-    font-family: "Bebas Neue", sans-serif;
+a {
+  text-decoration: none;
+  color: pink;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
 }
 
-/* NAV END */
+a:hover  {
+color: rgb(255, 125, 147) !important;
+}
+
+i:hover {
+color: rgb(255, 125, 147) !important;
+}
+
+nav > div {
+  flex: 1;
+  font-size: 1.5em;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5em;
+}
+
+  /* NAV */
 
 /* MEDIA QUERIES */
 
