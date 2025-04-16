@@ -205,6 +205,14 @@ nav {
       overflow-x: hidden !important;
   }
 
+  h1 {
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 15vw;
+    padding-left: 1.5rem;
+  }
+
+
+
   .loader {
     height: 100dvh;
     width: 100vw;
@@ -218,6 +226,7 @@ nav {
     padding-top: 1.875em;
     margin-bottom: 8em;
     width: 80%;
+    padding-left: 1.5rem;
   }
 
     footer {

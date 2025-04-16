@@ -28,18 +28,22 @@
      <body>
 
         <!-- NAV START -->
-        <nav>
-            <div class="logo">
-                <a  href="index.html" id="profilePic">
-                    <img class="kaneki" src="assets/images/kaneki.PNG" id="profilePic">
-                </a>
+        <div  id="navbar">
+            <div class="menu-btn">
+                <div id="primary-navigation" class="menu-btn_burger">
+                </div>
             </div>
-            <div class="links">
-                <a class="nav-button" href="index.html" id="nav1">Home</a>
-                <a  class="nav-button"  href="about.html"  id="nav2">About</a>
-                <a  class="nav-button"  href="contact.html"  id="nav3">Contact</a>
-            </div>
-        </nav>
+            <nav id="navbar">
+                <div class="logo">
+                    <a  href="#home"><img class="kaneki" src="assets/images/kaneki.PNG"></a>
+                </div>
+                <div class="links primary-navigation flex"  id="primary-navigation" data-visible="false" >
+                    <a href="index.html" id="nav1">Home</a>
+                    <a href="about.html" id="nav2">About</a>
+                    <a href="contact.html" id="nav3">Contact</a>
+                </div>
+            </nav>
+        </div>
         <!-- NAV END -->
 
         <!-- IMG GALLERY START -->
