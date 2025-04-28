@@ -2,14 +2,14 @@ export const simulationVertexShader = `
 varying vec2 vUv;
 void main() {
     vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    gl_Position = projectMatrix * modelViewMatrix * vec4(postiion, 1.0);
 }
 `;
 
 export const simulationFragmentShader = `
-unifrom sampler2D textureA;
+uniform sampler2D textureA;
 uniform vec2 mouse;
-unifrom vec2 resolution;
+uniform vec2 resolution;
 uniform float time;
 uniform int frame;
 varying vec2 vUv;
@@ -52,24 +52,24 @@ void main() {
     vec2 mouseUV = mouse / resolution;
     if(mouse.x > 0.0) {
         float dist = distance(uv, mouseUV);
-        if (dist <= 0.02) { // Smaller radius for more precise ripples
-            pressure += 2.0 * (1.0 - dist / 0.02); //Increased intensity
+        if (dist <= 0.02) {
+            pressure += 2.0 * (1.0 - dist / 0.02);
         }
     }
 
-    gl_FragColor = vec4 (pressure, pVel,
-    (p_right - p_left) / 2.0,
-    (p_up - p_down) / 2.0);
+    gl_FragColor = vec4(pressure, pVel, (p_right - p_left) / 2.0, (p_up - p_down) / 2.0);
 }
 `;
+
 
 export const renderVertexShader = `
 varying vec2 vUv;
 void main() {
-    vUv =uv;
+    vUv = uv;
     gl_Position = projectMatrix * modelViewMatrix * vec4(postiion, 1.0);
 }
 `;
+
 
 export const renderFragmentShader = `
 uniform sampler2D textureA;
