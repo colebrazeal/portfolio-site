@@ -8,8 +8,8 @@ body {
     width: 100%;
     height: 100%;
     font-family: "Bebas Neue", sans-serif;
-    background-color: pink;
-    color: black;
+    background-color: pink !important;
+    /* color: black; */
 }
 
 h1 {
