@@ -37,32 +37,30 @@ html, body {
   }
 
   .loader-content {
+    width: 100% !important;
+    min-height: 100vh;
     position: absolute;
-    top: 50%;
-    left: 47%;
-    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    width: 25em;
+    align-items: center;
     z-index: 2;
     color: #fff;
   }
 
   .loader-text {
-    font-size: 4em;
+    font-size: 5em;
   }
 
   .count {
-    flex: 2;
     text-align: right;
     line-height: 1;
     padding: 0 1em;
+    font-family: "Bebas Neue", sans-serif;
   }
 
   .copy {
-    flex: 6;
     font-family: "Rubik Glitch", system-ui;
-    font-size: 1.5em;
+    font-size: 1.563em;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -299,25 +297,34 @@ html, body {
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 
-    .loader-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      width: 25em;
-      z-index: 2;
-      color: #fff;
-    }
+  .loader-content {
+    width: 100% !important;
+    min-height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    color: #fff;
+  }
 
-    .copy {
-      flex: 6;
-      font-family: "Rubik Glitch", system-ui;
-      font-size: 1em;
-      text-transform: uppercase;
-      line-height: 1;
-    }
+  .loader-text {
+    font-size: 5em;
+  }
+
+  .count {
+    text-align: right;
+    line-height: 1;
+    padding: 0 1em;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  .copy {
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
 
     /* LOADER END */
 

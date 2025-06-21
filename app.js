@@ -112,7 +112,7 @@ gsap.from(".loader-2-mobile", {
 })
 
 gsap.to(".loader-2-mobile", {
-    y: -1200,
+    y: -1400,
     ease: "power4.inOut",
     duration: 3,
     delay: 3.75
