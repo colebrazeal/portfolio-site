@@ -162,6 +162,7 @@ nav {
   .about-title-container {
     display: flex;
     flex-direction: row;
+    gap: 5vw;
     z-index: -1;
   }
 

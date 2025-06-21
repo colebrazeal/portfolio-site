@@ -1,4 +1,4 @@
-// HOME ANIMATIONS
+// // HOME ANIMATIONS
 
 const primaryNav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".menu-btn");
@@ -68,7 +68,6 @@ anime.timeline({ loop: false })
         delay: (el, i) => 2000 + 30 * i
     })
 
-// Adding animations and transitions
 gsap.to(".pre-loader", {
     scale: 0.5, 
     ease: "power4.inOut",
@@ -119,6 +118,14 @@ gsap.to(".loader-2-mobile", {
 })
 
     gsap.from(".header h1", {
+        y: 400,
+        ease: "power4.inOut",
+        duration: 2,
+        delay: 4.25,
+        stagger: 0.05
+    })
+
+    gsap.from(".scroll-icon-container", {
         y: 400,
         ease: "power4.inOut",
         duration: 2,
@@ -208,14 +215,14 @@ gsap.from("#subheader", {
 })
 
 gsap.from(".about-title", {
-    x: -1300,
+    x: -2000,
     ease: "power4.inOut",
     duration: 2,
     delay: 5.25,
 })
 
 gsap.from(".me-title", {
-    x: 1300,
+    x: 1700,
     ease: "power4.inOut",
     duration: 2,
     delay: 5,
@@ -256,9 +263,7 @@ gsap.from(".about-text-5", {
     opacity: 0
 })
 
-// Add functionality to set z-index to -1 after loader finishes
-gsap.delayedCall(6, function() { // 6 is the delay after the loader finishes
-    // Select all elements you want to set z-index to -1
+gsap.delayedCall(6, function() {
     const targets = [
         ".pre-loader",
         ".loader",
@@ -269,16 +274,12 @@ gsap.delayedCall(6, function() { // 6 is the delay after the loader finishes
         ".m-16",
     ];
 
-    // Set z-index to -1 for all these targets
     targets.forEach(target => {
         document.querySelectorAll(target).forEach(el => {
             el.style.zIndex = -5;
         });
     });
 });
-
-
-    // CONTACT FUNCTIONS
 
     const items = document. queryselectorAl1('#item-1, #item-2, #item-3');
     const placeholder = document. queryselector(' .placeholder');
@@ -368,7 +369,6 @@ function updatePlaceholderText (event) {
     }
     function resetPlaceholderText() {
     const defaultText = 'CONTACT' ;
-    // const defaultSubHeaderText = 'ONE SUBSCRIPTION. ENDLESS WEB DESIGNS.';
 
     subheader.textContent = defaultSubHeaderText;
     animateScale(placeholder, 1.25);
@@ -381,32 +381,25 @@ function updatePlaceholderText (event) {
 
     });
 
-//    mouse controller
 
-// Get the canvas element and its 2D rendering context
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
-// Flag to track mouse movement
 let mouseMoved = false
 
-// Current mouse/touch position
-// initialized at screen center
 const pointer = {
   x: 0.5 * window.innerWidth,
   y: 0.5 * window.innerHeight,
 }
 
-// Parameters for the animation
 const params = {
-  pointsNumber: 40,       // Number of points in the trail
-  widthFactor: 10,        // Width factor for strokes
-  mouseThreshold: 0.5,    // Threshold for considering mouse movement
-  spring: 0.25,           // Controls the springiness of the animation
-  friction: 0.5,          // Introduces damping to simulate resistance
+  pointsNumber: 40,
+  widthFactor: 10,
+  mouseThreshold: 0.5,
+  spring: 0.25,
+  friction: 0.5,
 }
 
-// Initialize an array to store the trail of points
 const trail = new Array(params.pointsNumber)
 for(let i = 0; i < params.pointsNumber; i++) {
   trail[i] = {
@@ -417,7 +410,6 @@ for(let i = 0; i < params.pointsNumber; i++) {
   }
 }
 
-// Event listeners for mouse and touch events
 window.addEventListener('click', (event) => {
   updateMousePosition(event.pageX, event.pageY);
 })
@@ -432,31 +424,25 @@ window.addEventListener('touchmove', (event) => {
   updateMousePosition(event.tagetTouches[0].pageX, event.tagetTouches[0].pageY);
 })
 
-// Function to update the mouse/touch position
 function updateMousePosition(eX, eY) {
   pointer.x = eX
   pointer.y = eY
 }
 
-// Initial setup of the canvas and start the animation loop
 setupCanvas()
 update(0)
 
-// Event listener for window resize
 window.addEventListener('resize', setupCanvas)
 
 function update(t) {
   
-  // Update mouse position based on an animation pattern if not moved by the user
   if(!mouseMoved) {
     pointer.x = (0.5 + 0.3 * Math.cos(0.002 * t) * Math.sin(0.005 * t)) * window.innerWidth
     pointer.y = (0.5 + 0.2 * Math.cos(0.005 * t) + 0.1 * Math.cos(0.001 * t)) * window.innerHeight
   }
   
-  // Clear the canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   
-  // Update and draw the trail of points
   trail.forEach((p, pIdx) => {
     const prev = pIdx === 0 ? pointer : trail[pIdx - 1]
     const spring = pIdx === 0 ? 0.4 * params.spring : params.spring
@@ -468,20 +454,16 @@ function update(t) {
     p.y += p.dy
   })
   
-  // Create a gradient for the stroke color
   let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
   gradient.addColorStop(0, "rgba(160, 93, 134, 1)")
   gradient.addColorStop(1, "rgba(57, 34, 115, 1)")
   
-  // Set the stroke style and line cap
   ctx.strokeStyle = gradient
   ctx.lineCap = "round"
 
-  // Begin drawing the path
   ctx.beginPath();
   ctx.moveTo(trail[0].x, trail[0].y)
   
-  // Draw quadratic Bezier curves to create the trail
   for(let i = 1; i < trail.length - 1; i++) {
     const xc = 0.5 * (trail[i].x + trail[i + 1].x)
     const yc = 0.5 * (trail[i].y + trail[i + 1].y)
