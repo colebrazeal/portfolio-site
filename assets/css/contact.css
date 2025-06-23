@@ -96,7 +96,7 @@ nav > div {
 .contact-button {
     display: flex;
     text-align: center;
-    font-size: 1.875em;
+    font-size: 3em;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
 }
@@ -356,6 +356,14 @@ nav > div {
           transform: translateY(8px);
           background:#fff;
       }
+
+      .contact-button {
+        display: flex;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
     
       /* ANIMATION */
       .menu-btn.open .menu-btn_burger {
