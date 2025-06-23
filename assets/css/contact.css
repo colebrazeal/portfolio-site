@@ -268,7 +268,6 @@ nav > div {
         
         a {
           text-decoration: none;
-          color: #000;
           cursor: pointer;
         }
         
@@ -277,13 +276,7 @@ nav > div {
         }
         
         i:hover {
-          color: #000 !important;
-        }
-        
-        a:hover ~ .cursor {
-          color: #000;
-          cursor: pointer;
-          transform: scale(6);
+          color: pink !important;
         }
         
         nav > div {
