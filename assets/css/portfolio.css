@@ -29,7 +29,7 @@ img {
 
 h1 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 12vw;
+  font-size: 10vw;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.025em;
@@ -202,18 +202,70 @@ section.ws {
   padding: 2em;
 }
 
-.visit-right {
+/* .visit-right {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.025em;
   color: #fff;
   z-index: 21;
+} */
+
+/* .visit-left {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #000;
+  z-index: 21;
+} */
+
+.visit-left {
+  width: 200px;
+  height: 55px;
+  background: linear-gradient(to right, pink 50%, black 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border-radius: 25px;
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-decoration: none;
+  color: #fff;
+  transition: background-position 0.4s ease-out, color 0.4s ease-out;
+}
+
+.visit-right {
+  width: 200px;
+  height: 55px;
+  background: linear-gradient(to right, pink 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border-radius: 25px;
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-decoration: none;
+  color: #000;
+  transition: background-position 0.4s ease-out, color 0.4s ease-out;
 }
 
 .visit-right:hover, .visit-left:hover {
-  color: pink;
+  background-position: left bottom;
+  color: black;
 }
+
+/* .visit-right:hover, .visit-left:hover {
+  background: pink;
+  color: #000;
+  transition: background-position 0.4s ease-out, color 0.4s ease-out;
+} */
 
 .project-img {
   width: 45%;
@@ -232,9 +284,10 @@ section.ws {
 }
 
 .project-info {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 1em;
   font-family: Arial, Helvetica, sans-serif;
+  width: 40vw;
 }
 
 .project-link {
@@ -258,15 +311,6 @@ section.ws {
   padding: 2em; 
 }
 
-.visit-left {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.025em;
-  color: #000;
-  z-index: 21;
-}
-
 .project-text {
   display: flex;
   flex-direction: column; 
@@ -280,11 +324,6 @@ section.ws {
   width: 40%;
   height: auto;
   object-fit: contain;
-}
-
-.project-info {
-  font-size: 20px;
-  margin-bottom: 1em;
 }
 
 .project-link {
