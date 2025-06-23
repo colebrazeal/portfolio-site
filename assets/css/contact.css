@@ -4,17 +4,15 @@
     box-sizing: border-box;
 }
 
-/* Ensure full height for html and body */
 html, body {
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
     background: #000;
 }
 
-/* Canvas/particle background positioning */
 canvas {
     position: fixed !important;
     top: 0 !important;
@@ -36,9 +34,10 @@ nav {
   width: 100%;
   padding: 2em;
   display: flex;
-  align-items: center; /* Added to vertically center items */
-  z-index: 10 !important; /* Changed from -2 to 10 */
-  position: relative;
+  align-items: center; 
+  z-index: 10 !important; 
+  position: absolute;
+  top: 0;
 }
 
 #navbar {
@@ -86,12 +85,12 @@ nav > div {
 }
 
 .contactHeader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  overflow: hidden;
 }
 
 .contact-button {
@@ -200,14 +199,6 @@ nav > div {
       overflow: hidden;
     }
 
-    .contactHeader {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-  }
-
   .contactPlaceholder {
     text-align: center;
     font-family: "Rubik Glitch", system-ui;
@@ -215,7 +206,6 @@ nav > div {
     color: #fff;
     line-height: 2.25;
   }
-  
 
     /* LOADER */
 
