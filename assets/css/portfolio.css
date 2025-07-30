@@ -19,6 +19,7 @@
 html, body {
     width: 100vw;
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 img {
@@ -170,17 +171,11 @@ section {
     width: 40px;
     filter: brightness(0) saturate(100%) invert(89%) sepia(20%) saturate(1000%) hue-rotate(300deg) brightness(105%) contrast(105%);
   }
-  
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 4em 0;
-  background-color: #000;
-  color: pink;
+.intro-divider {
+  width: 1.5px;
+  height: 30%;
+  background-color: pink;
 }
 
 .divider {
@@ -195,6 +190,10 @@ section.ws {
   background-color: transparent;
 }
 
+  .project-container-mobile {
+    display: none;
+  }
+
 .project-container-right {
   display: flex;
   flex-direction: row; 
@@ -205,24 +204,6 @@ section.ws {
   color: #fff;
   padding: 2em;
 }
-
-/* .visit-right {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.025em;
-  color: #fff;
-  z-index: 21;
-} */
-
-/* .visit-left {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.025em;
-  color: #000;
-  z-index: 21;
-} */
 
 .visit-left {
   width: 200px;
@@ -315,15 +296,6 @@ section.ws {
   padding: 2em; 
 }
 
-.project-text {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  max-width: 50%;
-}
-
 .project-img {
   width: 40%;
   height: auto;
@@ -338,6 +310,16 @@ section.ws {
 }
 
 .project-link:hover {
+  color: pink;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
   color: pink;
 }
 
@@ -751,9 +733,54 @@ nav {
   }
 
   .project-container-right {
+    display: none;
+  }
+
+  .project-container-left {
+    display: none;
+  }
+
+  .project-container-mobile {
     display: flex;
-    flex: column;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-info {
+    font-size: 24px;
+    margin-bottom: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80vw;
+  }
+
+  .project-text {
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    text-align: left;
+    /* max-width: 50%; */
+  }
+
+  #window-animation {
+    display: none;
   }
   
+  .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: pink;
+  color: #000;
+}
+
+.intro-divider {
+  width: 1.5px;
+  height: 30%;
+  background-color: #000;
+}
   
 }
