@@ -105,6 +105,21 @@
             
             <section class="ws" id="window-animation"></section>
 
+              <section class="project-container-left project-container-mobile">
+                  <div class="project-text">
+                      <h1>INSPIRE 2025</h1>
+                      <span class="project-info">
+                        Inspire 2025 is an ADDY Award nominated site, this updated version of the Inspire site is yet again a multi-page responsive website built for the 
+                        2025 TD SYNNEX "Inspire" company event. The site features even more immersive animations as well as 
+                        beautifully executed design to immerse the attendees of this company event. 
+                        </span>
+                        <a class="project-link" href="https://content.tdsynnex.com/inspire/index.html" target="_blank">
+                            <h2 class="visit-left">VIEW</h2>
+                        </a>
+                    </div>
+                    <img class="project-img" src="assets/images/12.JPG" alt="Project Image" />
+              </section>
+
             <!-- INSPIRE START -->
             <section class="project-container-right project-container-mobile">
                 <img class="project-img" src="assets/images/1.jpg" alt="Project Image" />
@@ -304,48 +319,52 @@
 
             gsap.registerPlugin(ScrollTrigger);
 
-            // Initialize Lenis
-            const lenis = new Lenis();
-
-            // Reset scroll position to top after page refresh/load using Lenis API
-            window.addEventListener("load", () => {
-                lenis.scrollTo(0, { duration: 0 });// Scroll to top instantly (duration 0 for immediate action)
+            const lenis = new Lenis({
+            // These two help a ton on iOS
+            smoothWheel: true,
+            smoothTouch: false,  // turn off touch smoothing (iOS doesn’t like it)
+            gestureDirection: 'vertical',
             });
 
+            // Always reset scroll on load
+            window.addEventListener("load", () => {
+            lenis.scrollTo(0, { duration: 0 });
+            });
+
+            // Update ScrollTrigger whenever Lenis scrolls
             lenis.on("scroll", ScrollTrigger.update);
 
+            // Tie Lenis into GSAP’s ticker
             gsap.ticker.add((time) => {
-                lenis.raf(time * 1000);
+            lenis.raf(time * 1000);
             });
-
             gsap.ticker.lagSmoothing(0);
 
+            // Your scrolltrigger animation
             ScrollTrigger.create({
-                trigger: ".ws",
-                start: "top bottom",
-                end: "bottom bottom",
-                scrub: 1,
-                onUpdate: (self) => {
-                    const galleryWrapper = document.querySelector(".gallery-wrapper");
-                    const sideCols = document.querySelectorAll(".col:not(.main)");
-                    const mainImg = document.querySelector(".portfolio-img.main img");
+            trigger: ".ws",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1,
+            onUpdate: (self) => {
+                const galleryWrapper = document.querySelector(".gallery-wrapper");
+                const sideCols = document.querySelectorAll(".col:not(.main)");
+                const mainImg = document.querySelector(".portfolio-img.main img");
 
-                    const scale = 1 + self.progress * 2.65;
-                    const yTranslate = self.progress * 300;
-                    const mainImgScale = 2 - self.progress * 0.85;
+                const scale = 1 + self.progress * 2.65;
+                const yTranslate = self.progress * 300;
+                const mainImgScale = 2 - self.progress * 0.85;
 
-                    galleryWrapper.style.transform = `translate(-50%, -50%) scale(${scale})`;
-
-                    sideCols.forEach((col) => {
-                        col.style.transform = `translateY(${yTranslate}px)`;
-                    });
-
-                    mainImg.style.transform = `scale(${mainImgScale})`;
-                },
+                galleryWrapper.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                sideCols.forEach((col) => {
+                col.style.transform = `translateY(${yTranslate}px)`;
+                });
+                mainImg.style.transform = `scale(${mainImgScale})`;
+            },
             });
 
+
         </script>
-        <script src="app.js"></script>
         <!-- SCRIPT TAGS END -->
 
      </body>
