@@ -246,13 +246,14 @@ nav > div {
 
          /* MOBILE NAV */
 
-        .logo {
-          width: 1em;
-          height: 1em;
-          border-radius: 50%;
-          position: absolute;
-          left: 5%; 
-        }
+      .logo {
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        position: absolute;
+        left: 5%; 
+        top: 50%;
+      }
 
         .kaneki {
           width: 1.5em;
