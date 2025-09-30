@@ -302,12 +302,18 @@ nav {
       /* MOBILE NAV */
 
       .logo {
-        width: 2em;
-        height: 2em;
+        width: 1em;
+        height: 1em;
         border-radius: 50%;
         position: absolute;
         left: 5%; 
-        top: 2%;
+        top: 20%;
+      }
+
+      .kaneki {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
       }
       
       nav {
