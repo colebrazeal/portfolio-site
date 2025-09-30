@@ -505,6 +505,10 @@ nav {
 
 @media screen and (max-width: 900px) {
 
+  #img-gallery {
+    display: none;
+  }
+
   .hero-img-mobile {
     display: flex;
     position: absolute;
